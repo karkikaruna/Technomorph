@@ -2,7 +2,6 @@ const int motorLeft1 = 8;
 const int motorLeft2 = 9;
 const int motorRight1 = 10;
 const int motorRight2 = 11;
-
 const int enableLeft = 5;
 const int enableRight = 6;
 
@@ -82,7 +81,7 @@ void stopMotors() {
   analogWrite(enableRight, 0);
 }
 
-void turnLeft() {
+void turnRight() {
   digitalWrite(motorLeft1, LOW);
   digitalWrite(motorLeft2, HIGH);
   digitalWrite(motorRight1, HIGH);
@@ -91,7 +90,7 @@ void turnLeft() {
   analogWrite(enableRight, speed);
 }
 
-void turnRight() {
+void turnLeft() {
   digitalWrite(motorLeft1, HIGH);
   digitalWrite(motorLeft2, LOW);
   digitalWrite(motorRight1, LOW);
@@ -99,3 +98,4 @@ void turnRight() {
   analogWrite(enableLeft, speed);
   analogWrite(enableRight, speed / 2); 
 }
+
