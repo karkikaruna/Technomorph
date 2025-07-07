@@ -1,9 +1,9 @@
-const int motorLeft1 = 8;
-const int motorLeft2 = 9;
-const int motorRight1 = 10;
-const int motorRight2 = 11;
-const int enableLeft = 5;
-const int enableRight = 6;
+const int motorLeft1 = 4;
+const int motorLeft2 = 5;
+const int motorRight1 = 2;
+const int motorRight2 = 3;
+const int enableLeft = 10;
+const int enableRight = 11;
 
 char command;
 int speed = 200; 
@@ -39,16 +39,6 @@ void loop() {
         break;
       case 'S': 
         stopMotors();
-        break;
-      case '+':
-        speed = min(255, speed + 10);
-        Serial.print("Speed increased to ");
-        Serial.println(speed);
-        break;
-      case '-': 
-        speed = max(0, speed - 10);
-        Serial.print("Speed decreased to ");
-        Serial.println(speed);
         break;
     }
   }
@@ -98,4 +88,5 @@ void turnLeft() {
   analogWrite(enableLeft, speed);
   analogWrite(enableRight, speed / 2); 
 }
+
 
